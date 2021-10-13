@@ -25,5 +25,10 @@ private var _homeBinding:FragmentHomeBinding? = null
         return homeBinding.root
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        _homeBinding = null
+    }
+
 
 }

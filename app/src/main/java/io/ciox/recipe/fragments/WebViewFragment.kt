@@ -24,5 +24,9 @@ class WebViewFragment : Fragment(R.layout.fragment_web_view) {
         return webViewBinding.root
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        _webViewBinding = null
+    }
 
 }

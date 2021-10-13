@@ -23,5 +23,9 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
         return detailBinding.root
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        _detailBinding = null
+    }
 
 }
