@@ -7,18 +7,22 @@ import android.view.View
 import android.view.ViewGroup
 import dagger.hilt.android.AndroidEntryPoint
 import io.ciox.recipe.R
+import io.ciox.recipe.databinding.FragmentHomeBinding
 
 @AndroidEntryPoint
 class HomeFragment : Fragment(R.layout.fragment_home) {
 
-
+private var _homeBinding:FragmentHomeBinding? = null
+    private  val homeBinding get() = _homeBinding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        _homeBinding = FragmentHomeBinding.inflate(inflater, container, false)
+
+        return homeBinding.root
     }
 
 
