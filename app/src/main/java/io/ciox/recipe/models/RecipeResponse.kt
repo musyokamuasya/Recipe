@@ -1,6 +1,6 @@
 package io.ciox.recipe.models
 
-data class RecipeService(
+data class RecipeResponse(
     val number: Int,
     val offset: Int,
     val results: List<Result>,
