@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="io.ciox.recipe.fragments.HomeFragment"
-        android:label="fragment_home"
+        android:label="Recipe Home"
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_homeFragment_to_detailFragment"
@@ -17,7 +17,7 @@
     <fragment
         android:id="@+id/webViewFragment"
         android:name="io.ciox.recipe.fragments.WebViewFragment"
-        android:label="fragment_web_view"
+        android:label="Recipe Reference"
         tools:layout="@layout/fragment_web_view" >
         <action
             android:id="@+id/action_webViewFragment_to_detailFragment"
@@ -26,7 +26,7 @@
     <fragment
         android:id="@+id/detailFragment"
         android:name="io.ciox.recipe.fragments.DetailFragment"
-        android:label="fragment_detail"
+        android:label="Recipe Detail"
         tools:layout="@layout/fragment_detail" >
         <action
             android:id="@+id/action_detailFragment_to_webViewFragment"
