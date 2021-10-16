@@ -21,6 +21,7 @@ private var _homeBinding:FragmentHomeBinding? = null
     private val recipeViewModel:RecipeViewModel by viewModels()
     private lateinit var recipeAdapter:RecipeAdapter
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -34,16 +35,23 @@ private var _homeBinding:FragmentHomeBinding? = null
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        HomeRecyclerView()
+        homeRecyclerView()
     }
 
-    private fun HomeRecyclerView(){
+    private fun homeRecyclerView(){
+        recipeAdapter = RecipeAdapter()
         homeBinding.homeRecycler.apply {
             layoutManager = GridLayoutManager(requireContext(), 2)
             setHasFixedSize(true)
+            adapter = recipeAdapter
 
         }
+
+        recipeViewModel.recipeResponse.observe(requireActivity(), { response ->
+            recipeAdapter.recipe = response.results
+        })
     }
+
     override fun onDestroy() {
         super.onDestroy()
         _homeBinding = null
