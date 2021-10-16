@@ -47,8 +47,8 @@ private var _homeBinding:FragmentHomeBinding? = null
 
         }
 
-        recipeViewModel.recipeResponse.observe(requireActivity(), {
-
+        recipeViewModel.recipeResponse.observe(requireActivity(), { response ->
+            recipeAdapter.recipe = response.results
         })
     }
 
